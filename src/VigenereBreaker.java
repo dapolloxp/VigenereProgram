@@ -6,7 +6,13 @@ public class VigenereBreaker
     public String sliceString(String message, int whichSlice, int totalSlices)
     {
         //REPLACE WITH YOUR CODE
-        return "WRITE ME!";
+        int x = 0;
+        StringBuilder slice = new StringBuilder(message.length());
+        for(int i = whichSlice; i < message.length(); i+=totalSlices)
+        {
+            slice.append(message.charAt(i));
+        }
+        return slice.toString();
     }
 
     public int[] tryKeyLength(String encrypted, int klength, char mostCommon)
