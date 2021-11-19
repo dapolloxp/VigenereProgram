@@ -1,7 +1,8 @@
 import edu.duke.*;
 import java.util.*;
 
-public class VigenereCipher {
+public class VigenereCipher
+{
     CaesarCipher[] ciphers;
     
     public VigenereCipher(int[] key) {
@@ -11,7 +12,8 @@ public class VigenereCipher {
         }
     }
     
-    public String encrypt(String input) {
+    public String encrypt(String input)
+    {
         StringBuilder answer = new StringBuilder();
         int i = 0;
         for (char c : input.toCharArray()) {
@@ -23,10 +25,12 @@ public class VigenereCipher {
         return answer.toString();
     }
     
-    public String decrypt(String input) {
+    public String decrypt(String input)
+    {
         StringBuilder answer = new StringBuilder();
         int i = 0;
-        for (char c : input.toCharArray()) {
+        for (char c : input.toCharArray())
+        {
             int cipherIndex = i % ciphers.length;
             CaesarCipher thisCipher = ciphers[cipherIndex];
             answer.append(thisCipher.decryptLetter(c));
@@ -35,7 +39,8 @@ public class VigenereCipher {
         return answer.toString();
     }
     
-    public String toString() {
+    public String toString()
+    {
         return Arrays.toString(ciphers);
     }
     
